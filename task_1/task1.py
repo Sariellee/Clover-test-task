@@ -1,4 +1,5 @@
-FILENAME = 'input.txt'
+INPUT_FILENAME = 'input.txt'
+OUTPUT_FILENAME = 'output.txt'
 NUMBER_OF_ELEMENTS = 5
 
 
@@ -25,7 +26,11 @@ def get_k_elements(values: list, k: int) -> list:
 
 
 if __name__ == "__main__":
-    with open(FILENAME, 'r') as file:
+    with open(INPUT_FILENAME, 'r') as file:
         values = file.read().split()
 
-    print(get_k_elements(values, NUMBER_OF_ELEMENTS))
+    result = get_k_elements(values, NUMBER_OF_ELEMENTS)
+    print(" ".join(result))
+
+    with open(OUTPUT_FILENAME, 'w') as file:
+        file.write(" ".join(result))
