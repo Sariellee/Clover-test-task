@@ -25,12 +25,12 @@ def get_k_elements(values: list, k: int) -> list:
     return [values.pop() for _ in range(k)]
 
 
-if __name__ == "__main__":
-    with open(INPUT_FILENAME, 'r') as file:
-        values = file.read().split()
-
-    result = get_k_elements(values, NUMBER_OF_ELEMENTS)
-    print(" ".join(result))
-
-    with open(OUTPUT_FILENAME, 'w') as file:
-        file.write(" ".join(result))
+# if __name__ == "__main__":
+#     with open(INPUT_FILENAME, 'r') as file:
+#         values = file.read().split()
+#
+#     result = get_k_elements(values, NUMBER_OF_ELEMENTS)
+#     print(" ".join(result))
+#
+#     with open(OUTPUT_FILENAME, 'w') as file:
+#         file.write(" ".join(result))

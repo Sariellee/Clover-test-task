@@ -72,7 +72,7 @@ def calculate_sliding_metrics(
     )
 
     if window_size <= 0:
-        raise Exception("Window size is zero or less")
+        raise ValueError("Window size is zero or less")
 
     medians = []
     averages = []
@@ -133,12 +133,12 @@ def calculate_time_window_metrics(
     return result
 
 
-if __name__ == "__main__":
-    data = read_data(INPUT_FILENAME)
-    result = calculate_time_window_metrics(data, WINDOW_SIZE)
-
-    json_result = json.dumps(result)  # serializable
-
-    print(json_result)
-    with open(OUTPUT_FILENAME, 'w') as file:
-        file.write(json_result)
+# if __name__ == "__main__":
+#     data = read_data(INPUT_FILENAME)
+#     result = calculate_time_window_metrics(data, WINDOW_SIZE)
+#
+#     json_result = json.dumps(result)  # serializable
+#
+#     print(json_result)
+#     with open(OUTPUT_FILENAME, 'w') as file:
+#         file.write(json_result)
